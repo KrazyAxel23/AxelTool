@@ -11,7 +11,7 @@ from rich.style import Style
 import pystyle
 from pystyle import Colors, Colorate
 
-from cylo import Bubcyz
+from Krazy import Axel
 
 __CHANNEL_USERNAME__ = "AxelToolChannel"
 __GROUP_USERNAME__   = "AxelToolChat"
