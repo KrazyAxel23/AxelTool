@@ -142,7 +142,7 @@ if __name__ == "__main__":
         acc_password = prompt_valid_value("[bold][?] Aᴄᴄᴏᴜɴᴛ Pᴀssᴡᴏʀᴅ: [/bold]", "Password", password=False)
         acc_access_key = prompt_valid_value("[bold][?] Aᴄᴄᴇss Kᴇʏ:[/bold]", "Access Key", password=False)
         console.print("[bold cyan][%] Tʀʏɪɴɢ ᴛᴏ ʟᴏɢ ɪɴ ᴛᴏ ᴛʜᴇ ɢɪᴠᴇɴ ᴀᴄᴄᴏᴜɴᴛ.[/bold cyan]: ", end=None)
-        cpm = Bubcyz(acc_access_key)
+        cpm = Krazy(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
             if login_response == 100:
