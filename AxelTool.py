@@ -170,7 +170,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"]
             print(Colorate.Horizontal(Colors.rainbow, '{01}: Iɴᴄʀᴇᴀsᴇ Mᴏɴᴇʏ           1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{02}: Iɴᴄʀᴇᴀsᴇ Cᴏɪɴs           4.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{03}: Kɪɴɢ Rᴀɴᴋ                8K'))
@@ -199,6 +199,18 @@ if __name__ == "__main__":
             print(Colorate.Horizontal(Colors.rainbow, '{26}: Cʟᴏɴᴇ Aᴄᴄᴏᴜɴᴛ            7K'))
             print(Colorate.Horizontal(Colors.rainbow, '{27}: Aᴜᴛᴏ Iɴɴᴇʀ 414ʜᴘ         2.5k'))
             print(Colorate.Horizontal(Colors.rainbow, '{28}: Cᴜsᴛᴏᴍ Aɴɢʟᴇ             1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{29}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{30}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{31}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{32}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{33}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{34}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{35}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{36}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{37}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{38}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{39}: Tᴇsᴛ                     1.5k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{40}: Tᴇsᴛ                     1.5k'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : Exɪᴛ'))
             
             print(Colorate.Horizontal(Colors.rainbow, '===============[ Axᴇʟ Tᴇʀᴍᴜx Tᴏᴏʟ ]==============='))
