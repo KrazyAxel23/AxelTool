@@ -659,7 +659,27 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, 'Fᴀɪʟᴇᴅ'))
                     print(Colorate.Horizontal(Colors.rainbow, 'Pʟᴇᴀsᴇ Tʀʏ Aɢᴀɪɴ.'))
                     sleep(2)
-                    continue                                        
+                    continue    
+            elif service == 40:  # Clone only license plates between accounts
+                console.print("[bold cyan]License Plate Cloner Activated[/bold cyan]")
+                to_email = Prompt.ask("[bold][?] Target account email[/bold]")
+                to_password = Prompt.ask("[bold][?] Target account password[/bold]", password=True)
+                console.print("[bold red][%] Cloning license plates...[/bold red]")
+
+                result = cpm.clone_plates_only(to_email, to_password)
+
+                if result:
+                    print(Colorate.Horizontal(Colors.rainbow, "✔ License plates successfully cloned"))
+                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
+                    console.print("[bold green]======================================[/bold green]")
+                    answ = Prompt.ask("[?] Do you want to exit?", choices=["y", "n"], default="n")
+                    if answ == "y":
+                        console.print("[bold white]Thank you for using my tool[/bold white]")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED[/bold red]")
+                    console.print("[bold red]Please try again[/bold red]")
+                    sleep(2)
             else: continue
             break
         break
