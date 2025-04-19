@@ -1,8 +1,9 @@
 import requests
+import urllib.parse
 
-__ENDPOINT_URL__: str = "https://xeno1.squareweb.app/api"
+__ENDPOINT_URL__: str = "https://cylotool.squareweb.app/api"
 
-class Krazy:
+class Bubcyz:
     def __init__(self, access_key) -> None:
         self.auth_token = None
         self.access_key = access_key
@@ -16,6 +17,29 @@ class Krazy:
             self.auth_token = response_decoded.get("auth")
         return response_decoded.get("error")
     
+    
+    def change_email(self, new_email):
+        decoded_email = urllib.parse.unquote(new_email)
+        payload = {
+            "account_auth": self.auth_token,
+            "new_email": decoded_email
+        }
+        params = {"key": self.access_key} 
+        response = requests.post(f"{__ENDPOINT_URL__}/change_email", params=params, data=payload)
+        response_decoded = response.json()
+        if response_decoded.get("new_token"):
+            self.auth_token = response_decoded["new_token"]
+        return response_decoded.get("ok")
+    
+    def change_password(self, new_password):
+        payload = { "account_auth": self.auth_token, "new_password": new_password }
+        params = { "key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/change_password", params=params, data=payload)
+        response_decoded = response.json()
+        if response_decoded.get("new_token"):
+            self.auth_token = response_decoded["new_token"]
+        return response_decoded.get("ok")
+        
     def register(self, email, password) -> int:
         payload = { "account_email": email, "account_password": password }
         params = { "key": self.access_key }
@@ -185,7 +209,7 @@ class Krazy:
         response = requests.post(f"{__ENDPOINT_URL__}/clone", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
-    
+        
     def set_player_plates(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
@@ -214,10 +238,14 @@ class Krazy:
         response_decoded = response.json()
         return response_decoded.get("ok")
 
-    def hack_car_speed(self, car_id):
+    def hack_car_speed(self, car_id, new_hp, new_inner_hp, new_nm, new_torque):
         payload = {
             "account_auth": self.auth_token,
-            "car_id": car_id
+            "car_id": car_id,
+            "new_hp": new_hp,
+            "new_inner_hp": new_inner_hp,
+            "new_nm": new_nm,
+            "new_torque": new_torque,
         }
         params = { "key": self.access_key }
         response = requests.post(f"{__ENDPOINT_URL__}/hack_car_speed", params=params, data=payload)
@@ -240,4 +268,119 @@ class Krazy:
         params = {"key": self.access_key}
         response = requests.post(f"{__ENDPOINT_URL__}/max_max1", params=params, data=payload)
         response_decoded = response.json()
-        return response_decoded.get("ok")        
+        return response_decoded.get("ok")
+        
+    def max_max2(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/max_max2", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def millage_car(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/millage_car", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def brake_car(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/brake_car", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def unlock_crown(self) -> bool: 
+        payload = {
+        "account_auth": self.auth_token,
+        } 
+        params = {"key": self.access_key} 
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_crown", params=params, data=payload) 
+        response_decoded = response.json() 
+        return response_decoded.get("ok")
+
+    def rear_bumper(self, car_id):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/rear_bumper", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def front_bumper(self, car_id):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/front_bumper", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def shittin(self) -> bool: 
+        payload = {
+        "account_auth": self.auth_token,
+        } 
+        params = { "key": self.access_key } 
+        response = requests.post(f"{__ENDPOINT_URL__}/shittin", params=params, data=payload) 
+        response_decoded = response.json() 
+        return response_decoded.get("ok")
+        
+    def testin(self, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/testin", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def telmunnongodz(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/telmunnongodz", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def telmunnongonz(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/telmunnongonz", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def clone_plates_only(self, account_email, account_password) -> bool:
+        payload = {
+        "account_auth": self.auth_token,
+        "to_email": account_email,
+        "to_password": account_password
+        }
+       params = {"key": self.access_key}
+       response = requests.post(f"{self.endpoint}/clone_plates", params=params, data=payload)
+       response_decoded = response.json()
+       return response_decoded.get("ok")
+
